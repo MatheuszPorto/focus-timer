@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #121214;
+    --text-color: #FFF;
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    align-content: center;
+    height: 100vh;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.hide {
+    display: none;
+}
+
+#timer  {
+    font-size: 8.8rem;
+    display: flex;
+}
+
+#controls {
+    background: rgba(66, 211, 255, 0.13);
+    border-radius: 99.99rem;
+    width: 22.8rem;
+    height: 10.8rem;
+    display: flex;
+    gap: 3.2rem;
+    justify-content: center;
+}
