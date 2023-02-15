@@ -15,8 +15,12 @@ body {
     color: var(--text-color);
     font-family: 'Roboto', sans-serif;
     display: grid;
-    align-content: center;
     height: 100vh;
+}
+
+main {
+    justify-self: center;
+    align-self: end;
 }
 
 button {
@@ -30,16 +34,23 @@ button {
 }
 
 #timer  {
-    font-size: 8.8rem;
+    font-size: clamp(4rem, 5rem + 15vw ,8.8rem);
     display: flex;
+    margin-bottom: 1.6rem;
 }
 
 #controls {
     background: rgba(66, 211, 255, 0.13);
     border-radius: 99.99rem;
-    width: 22.8rem;
-    height: 10.8rem;
+    width: clamp(10rem, 15rem + 30vw, 22.8rem );
+    height: clamp(8rem, 4rem + 10vw, 10.8rem);
     display: flex;
     gap: 3.2rem;
     justify-content: center;
+}
+
+footer {
+    justify-self: end;
+    align-self: end;
+    padding: 0 4rem 3.2rem 0 ;
 }
