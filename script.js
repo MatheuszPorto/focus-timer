@@ -8,22 +8,29 @@ const minutesDisplay = document.querySelector('.minutes');
 const secondsDisplay = document.querySelector('.seconds')
 let minutes; 
 
+function updateTimerDisplay (minutes,seconds) {
+  minutesDisplay.textContent = String(minutes).padStart(2,"0")
+  secondsDisplay.textContent = String(seconds).padStart(2,"0")
+}
+
 function countDown () {
   setTimeout(function () {
-    let seconds = Number(secondsDisplay.textContent)
-    let minutes = Number(minutesDisplay.textContent)
+    let seconds = Number(secondsDisplay.textContent);
+    let minutes = Number(minutesDisplay.textContent);
 
-    if (seconds <= 0) {
-      seconds = 2
-      minutesDisplay.textContent= String(minutes -1).padStart(2,"0")
-    }
-
-    secondsDisplay.textContent = String(seconds -1).padStart(2,"0")
+    updateTimerDisplay(minutes, 0)
 
     if (minutes <= 0) {
       handleStopButton()
       return
     }
+
+    if (seconds <= 0) {
+      seconds = 2
+      --minutes
+    }
+
+    updateTimerDisplay(minutes,String(seconds -1))
 
     countDown()
   }, 1000)
@@ -61,7 +68,7 @@ const handleSoundOffbutton = () => {
 
 const handleSetButton = () => {
   minutes = prompt('How many minutes?')
-  minutesDisplay.textContent = String(minutes).padStart(2,"0")
+  updateTimerDisplay(minutes, 0)
 }
  
 buttonPlay.addEventListener('click',handlePlayButton
