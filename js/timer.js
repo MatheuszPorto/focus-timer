@@ -1,4 +1,9 @@
-function timer () {
+export function Timer ({
+  minutesDisplay,
+  secondsDisplay,
+  timerTimeOut,
+  handleStopButton
+}) {
 
     function updateTimerDisplay (minutes,seconds) {
       minutesDisplay.textContent = String(minutes).padStart(2,"0")
@@ -24,7 +29,7 @@ function timer () {
       
           updateTimerDisplay(minutes,String(seconds -1))
       
-      countDown()
+        countDown()
         }, 1000)
       }
     
@@ -32,8 +37,12 @@ function timer () {
         updateTimerDisplay(minutes, 0)
         clearTimeout(timerTimeOut)
       }
+
+      return {
+        countDown,
+        resetTimer
+      }
       
 }
 
 
-  export {}
