@@ -39,13 +39,13 @@ const handleStopButton = () => {
 const handleSoundOnbutton = () => {
   buttonSoundOn.classList.add('hide')
   buttonSoundOff.classList.remove('hide')
-  sound.bgAudio.play()
+  sound.bgAudio.pause()
 }
 
 const handleSoundOffbutton = () => {
   buttonSoundOff.classList.add('hide')
   buttonSoundOn.classList.remove('hide')
-  sound.bgAudio.pause()
+  sound.bgAudio.play()
 }
 
 const handleSetButton = () => {
